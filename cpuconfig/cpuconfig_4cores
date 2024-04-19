@@ -1,0 +1,29 @@
+;cpuconf file, INI format
+
+[ General ]
+Frequency = 2000
+Cores = 4
+
+; M2S does not auto-scale the fastforward with the number of running contexts
+; REMEMBER TO SCALE THE FASTFORWARDED INSTRUCTIONS WHEN YOU RUN MULTIPROGRAM WLOADS.
+; i.e. isolated execution 300M insts - 2-program workload 600M insts
+
+FastForward = 300000000
+
+
+[ Queues ]
+LqSize = 128
+IqSize = 64
+RobSize = 128
+RfIntSize = 288
+RfFpSize = 288
+
+[ Pipeline ]
+DecodeWidth = 4
+DispatchWidth = 4
+IssueWidth = 4
+CommitWidth = 4
+
+[ BranchPredictor ]
+Kind = Combined
+
