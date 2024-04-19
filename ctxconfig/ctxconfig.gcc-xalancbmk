@@ -1,0 +1,11 @@
+[ Context 0 ]
+exe = gcc_base.i386
+args = 166.i -o 166.s
+cwd = /home/student/spec2006/403.gcc
+StdOut = gcc.out
+
+[ Context 1 ]
+exe = xalancbmk_base.i386
+args = -v t5.xml xalanc.xsl
+cwd = /home/student/spec2006/483.xalancbmk
+StdOut = xalancbmk.out

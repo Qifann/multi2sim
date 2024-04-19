@@ -1,0 +1,11 @@
+[ Context 0 ]
+exe = mcf_base.i386
+args = inp.in
+cwd = /home/student/spec2006/429.mcf
+StdOut = mcf.out
+
+[ Context 1 ]
+exe = xalancbmk_base.i386
+args = -v t5.xml xalanc.xsl
+cwd = /home/student/spec2006/483.xalancbmk
+StdOut = xalancbmk.out
