@@ -1,0 +1,193 @@
+[ Network.mesh ] 
+ 	Frequency = 3000 
+  	DefaultInputBufferSize = 4096 
+  	DefaultOutputBufferSize = 4096 
+  	DefaultBandwidth = 16
+  	DefaultNodeBandwidth = 64
+
+;;;;;;;; NODES ;;;;;;;; 
+
+[ Network.mesh.Node.n0 ]
+  Type = EndNode
+ Index = 0
+
+[ Network.mesh.Node.n1 ]
+  Type = EndNode
+ Index = 1
+
+[ Network.mesh.Node.n2 ]
+  Type = EndNode
+ Index = 2
+
+[ Network.mesh.Node.n3 ]
+  Type = EndNode
+ Index = 3
+
+[ Network.mesh.Node.n4 ]
+  Type = EndNode
+ Index = 4
+
+[ Network.mesh.Node.n5 ]
+  Type = EndNode
+ Index = 5
+
+;;;;;;;; SWITCHES ;;;;;;;; 
+
+[ Network.mesh.Node.s0 ]
+  Type = Switch
+ Index = 6
+
+[ Network.mesh.Node.s1 ]
+  Type = Switch
+ Index = 7
+
+[ Network.mesh.Node.s2 ]
+  Type = Switch
+ Index = 8
+
+[ Network.mesh.Node.s3 ]
+  Type = Switch
+ Index = 9
+
+[ Network.mesh.Node.s4 ]
+  Type = Switch
+ Index = 10
+
+[ Network.mesh.Node.s5 ]
+  Type = Switch
+ Index = 11
+
+;;;;;;;; LINKS ;;;;;;;; 
+
+[ Network.mesh.Link.s0s1 ]
+  Source = s0
+  Dest = s1
+  Type = Bidirectional
+
+[ Network.mesh.Link.s1s2 ]
+  Source = s1
+  Dest = s2
+  Type = Bidirectional
+
+[ Network.mesh.Link.s3s4 ]
+  Source = s3
+  Dest = s4
+  Type = Bidirectional
+
+[ Network.mesh.Link.s4s5 ]
+  Source = s4
+  Dest = s5
+  Type = Bidirectional
+
+
+[ Network.mesh.Link.s0s3 ]
+  Source = s0
+  Dest = s3
+  Type = Bidirectional
+
+[ Network.mesh.Link.s1s4 ]
+  Source = s1
+  Dest = s4
+  Type = Bidirectional
+
+[ Network.mesh.Link.s2s5 ]
+  Source = s2
+  Dest = s5
+  Type = Bidirectional
+
+
+[ Network.mesh.Link.n0s0 ]
+  Source = n0
+  Dest = s0
+  Type = Bidirectional
+
+[ Network.mesh.Link.n1s1 ]
+  Source = n1
+  Dest = s1
+  Type = Bidirectional
+
+[ Network.mesh.Link.n2s2 ]
+  Source = n2
+  Dest = s2
+  Type = Bidirectional
+
+[ Network.mesh.Link.n3s3 ]
+  Source = n3
+  Dest = s3
+  Type = Bidirectional
+
+[ Network.mesh.Link.n4s4 ]
+  Source = n4
+  Dest = s4
+  Type = Bidirectional
+
+[ Network.mesh.Link.n5s5 ]
+  Source = n5
+  Dest = s5
+  Type = Bidirectional
+
+;;;;;;;; ROUTES ;;;;;;;; 
+
+[ Network.mesh.Routes ]
+n0.to.n1 = s0
+n0.to.n2 = s0
+n0.to.n3 = s0
+n0.to.n4 = s0
+n0.to.n5 = s0
+n1.to.n0 = s1
+n1.to.n2 = s1
+n1.to.n3 = s1
+n1.to.n4 = s1
+n1.to.n5 = s1
+n2.to.n0 = s2
+n2.to.n1 = s2
+n2.to.n3 = s2
+n2.to.n4 = s2
+n2.to.n5 = s2
+n3.to.n0 = s3
+n3.to.n1 = s3
+n3.to.n2 = s3
+n3.to.n4 = s3
+n3.to.n5 = s3
+n4.to.n0 = s4
+n4.to.n1 = s4
+n4.to.n2 = s4
+n4.to.n3 = s4
+n4.to.n5 = s4
+n5.to.n0 = s5
+n5.to.n1 = s5
+n5.to.n2 = s5
+n5.to.n3 = s5
+n5.to.n4 = s5
+s0.to.n1 = s1
+s0.to.n2 = s1
+s0.to.n3 = s3
+s0.to.n4 = s1
+s0.to.n5 = s1
+s1.to.n0 = s0
+s1.to.n2 = s2
+s1.to.n3 = s0
+s1.to.n4 = s4
+s1.to.n5 = s2
+s2.to.n0 = s1
+s2.to.n1 = s1
+s2.to.n3 = s1
+s2.to.n4 = s1
+s2.to.n5 = s5
+s3.to.n0 = s0
+s3.to.n1 = s4
+s3.to.n2 = s4
+s3.to.n4 = s4
+s3.to.n5 = s4
+s4.to.n0 = s3
+s4.to.n1 = s1
+s4.to.n2 = s5
+s4.to.n3 = s3
+s4.to.n5 = s5
+s5.to.n0 = s4
+s5.to.n1 = s4
+s5.to.n2 = s2
+s5.to.n3 = s4
+s5.to.n4 = s4
+
+
