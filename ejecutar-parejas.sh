@@ -1,11 +1,11 @@
 #!/bin/bash
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.gcc-mcf \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.gcc-mcf \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
                                           --reports-dir reports-dir-gcc-mcf
-
+exit
 
  multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
                                           --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
