@@ -4,7 +4,9 @@
                                           --mem-config memconfig/memconfig_baseline_1core_SMT2 \
                                           --ctx-config ctxconfig/ctxconfig.gcc-mcf \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-dir-gcc-mcf
+--own-report reports-dir/gcc-mcf/data-racetrack.csv \
+--rtmi-report reports-dir/gcc-mcf/inst-racetrack.csv \
+                                          --reports-dir reports-dir/gcc-mcf
 exit
 
  multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
