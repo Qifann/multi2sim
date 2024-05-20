@@ -99,8 +99,8 @@ RTMi_max_lat_l2 = 0
 Type = Cache
 Geometry = l3
 HighNetwork = net-l1i-l1d-0
-LowNetwork = mesh
-LowNetworkNode = n0
+LowNetwork = net-l3-mm
+LowModules = mod-mm-0
 LowModules = mod-mm-0
 
 #
@@ -130,37 +130,31 @@ DirectoryAssoc = 65536
 #
 # Nodes
 #
-[ Entry core-0 ]
+#
+# Nodes
+#
+[ Entry core-0-th0 ]
 Arch = x86
 Core = 0
 Thread = 0
 InstModule = il1-0
 DataModule = dl1-0
 
-[ Entry core-1 ]
+[ Entry core-0-th1 ]
 Arch = x86
-Core = 1
-Thread = 0
-InstModule = il1-1
-DataModule = dl1-1
-
-[ Entry core-2 ]
-Arch = x86
-Core = 2
-Thread = 0
-InstModule = il1-2
-DataModule = dl1-2
-
-[ Entry core-3 ]
-Arch = x86
-Core = 3
-Thread = 0
-InstModule = il1-3
-DataModule = dl1-3
+Core = 0
+Thread = 1
+InstModule = il1-0
+DataModule = dl1-0
 
 # Interconnects
 
 [ Network net-l1i-l1d-0 ]
+DefaultBandWidth = 512
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+
+[ Network net-l3-mm ]
 DefaultBandWidth = 512
 DefaultInputBufferSize = 4096
 DefaultOutputBufferSize = 4096
