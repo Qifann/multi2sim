@@ -1,7 +1,7 @@
 #!/bin/bash
 
  Multi2Sim-rtmi/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config memconfig/memconfig_combined_160kb_L1I_5w_4mods_32head \
+                                          --mem-config memconfig/memconfig_combined_160kb_1core_SMT2 \
 					  --ctx-config ctxconfigs/ctxconfig.gcc-mcf \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
 --own-report reports-dir/gcc-mcf/data-racetrack.csv \
