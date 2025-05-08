@@ -66,8 +66,8 @@ LowModules = mod-mm-0 mod-mm-1
 # DRAM System
 #
 [ DRAMSystem mms-0 ]
-SystemDescription = /home/student/configuraciones-sample/dramsim/system.ini
-DeviceDescription = /home/student/configuraciones-sample/dramsim/DDR3_micron_8M_8B_x16_sg125.ini
+SystemDescription = ./configuraciones-sample/dramsim/system.ini
+DeviceDescription = ./configuraciones-sample/dramsim/DDR3_micron_8M_8B_x16_sg125.ini
 MB = 4096
 
 #

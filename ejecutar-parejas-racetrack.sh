@@ -1,4 +1,4 @@
-
+CORREGIR
 #!/bin/bash
 
  Multi2Sim-rtmi/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \

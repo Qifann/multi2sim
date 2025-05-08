@@ -1,3 +1,5 @@
+
+CORREGIR
 #!/bin/bash 
 
  multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \

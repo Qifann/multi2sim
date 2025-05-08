@@ -71,8 +71,8 @@ LowModules = mod-mm-0
 # DRAM System
 #
 [ DRAMSystem mms-0 ]
-SystemDescription = /home/student/configuraciones-sample/dramsim/systemDDR4.ini
-DeviceDescription = /home/student/configuraciones-sample/dramsim/DDR4_micron_8Gb_x8_512.ini
+SystemDescription = ./configuraciones-sample/dramsim/systemDDR4.ini
+DeviceDescription = ./configuraciones-sample/dramsim/DDR4_micron_8Gb_x8_512.ini
 MB = 4096
 
 
