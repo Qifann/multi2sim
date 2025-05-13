@@ -1,180 +1,185 @@
 
-CORREGIR
 #!/bin/bash 
+#SBATCH -n 5 -N 5 
+#SBATCH -o slurm_output/slurm-%j.out
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.astar \
+TIMESTAMP=$(date '+%Y-%m-%d_%H:%M:%S')
+
+mkdir -p reports-1core-SMT2/$TIMESTAMP
+
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.astar \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-astar
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-astar &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.bwaves \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.bwaves \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-bwaves
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-bwaves &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.bzip2 \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.bzip2 \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-bzip2
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-bzip2 &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.cactusADM \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.cactusADM \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-cactusADM
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-cactusADM &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.calculix \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.calculix \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-calculix
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-calculix &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.dealII \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.dealII \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-dealII
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-dealII &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.gamess \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.gamess \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-gamess
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-gamess &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.gcc \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.gcc \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-gcc
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-gcc &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.GemsFDTD \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.GemsFDTD \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-GemsFDTD
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-GemsFDTD &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.gobmk \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.gobmk \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-gobmk
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-gobmk &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.gromacs \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.gromacs \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-gromacs
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-gromacs &
 
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.h264ref \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.h264ref \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-h264ref
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-h264ref &
 
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.hmmer\
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.hmmer\
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-hmmer
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-hmmer &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.lbm \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.lbm \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-lbm
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-lbm &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.leslie3d \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.leslie3d \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-leslie3d
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-leslie3d &
 
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.libquantum \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.libquantum \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-libquantum
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-libquantum &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.mcf \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.mcf \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-mcf
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-mcf &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.milc \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.milc \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-milc
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-milc &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.namd \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.namd \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-namd
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-namd &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.omnetpp\
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.omnetpp\
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-omnetpp
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-omnetpp &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.perlbench \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.perlbench \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-perlbench
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-perlbench &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.povray \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.povray \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-povray
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-povray &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.sjeng \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.sjeng \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-sjeng
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-sjeng &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.soplex \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.soplex \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-soplex
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-soplex &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.sphinx3 \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.sphinx3 \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-sphinx3
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-sphinx3 &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.tonto \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.tonto \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-tonto
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-tonto &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.wrf \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.wrf \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-wrf
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-wrf &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.xalancbmk \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.xalancbmk \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-xalancbmk
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-xalancbmk &
 
- multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config configuraciones-sample/cpuconfig_baseline_1core_SMT2 \
-                                          --mem-config configuraciones-sample/memconfig_baseline_1core_SMT2 \
-                                          --ctx-config ctxconfigs/ctxconfig.zeusmp \
+ multi2sim-4.1/bin/m2s --x86-sim detailed --x86-config cpuconfig/cpuconfig_baseline_1core_SMT2 \
+                                          --mem-config memconfig/memconfig_baseline_1core_SMT2 \
+                                          --ctx-config ctxconfig/ctxconfig.zeusmp \
 --x86-min-inst-per-ctx 5000 --epoch-length 100   \
-                                          --reports-dir reports-1core-SMT2/reports-dir-zeusmp
+                                          --reports-dir reports-1core-SMT2/$TIMESTAMP/reports-dir-zeusmp
