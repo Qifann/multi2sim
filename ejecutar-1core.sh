@@ -1,4 +1,3 @@
-
 #!/bin/bash 
 #SBATCH -n 5 -N 5 
 #SBATCH -o slurm_output/slurm-%j.out
