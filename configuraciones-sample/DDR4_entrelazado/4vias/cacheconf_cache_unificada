@@ -1,0 +1,217 @@
+[ CacheGeometry l1 ]
+Sets = 128
+Assoc = 4
+BlockSize = 64
+Latency = 1
+
+[ CacheGeometry l1d ]
+Sets = 512
+Assoc = 5
+BlockSize = 64
+Latency = 1
+
+#[ CacheGeometry l2 ]
+#Sets = 512
+#Assoc = 16
+#BlockSize = 64
+#Latency = 6
+
+[ CacheGeometry l3 ]
+Sets = 8192
+Assoc = 16
+BlockSize = 64
+Latency = 12
+
+
+#
+# Level 1 Caches
+#
+[ Module dl1-0 ]
+Type = Cache
+Geometry = l1d
+HighNetwork = net-l1i-l1d-0
+LowNetwork = net-l1d-l3
+LowModules = l3-0 
+Ports = 2
+entrelazado = 1
+RTM = 1
+RTM_type = DL
+headers = 128
+submodulos = 4
+
+[ Module il1-0 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-l1i-l1d-0
+LowModules = dl1-0 
+Ports = 2
+
+[ Module dl1-1 ]
+Type = Cache
+Geometry = l1
+HighNetwork = net-l1i-l1d-1
+LowNetwork = net-l1d-l3
+LowModules = l3-0
+Ports = 2
+
+[ Module il1-1 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-l1i-l1d-1
+LowModules = dl1-1 
+Ports = 2
+
+[ Module dl1-2 ]
+Type = Cache
+Geometry = l1
+HighNetwork = net-l1i-l1d-2
+LowNetwork = net-l1d-l3
+LowModules = l3-0
+Ports = 2 
+
+[ Module il1-2 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-l1i-l1d-2
+LowModules = dl1-2 
+Ports = 2
+
+[ Module dl1-3 ]
+Type = Cache
+Geometry = l1
+HighNetwork = net-l1i-l1d-3
+LowNetwork = net-l1d-l3
+LowModules = l3-0
+Ports = 2
+
+[ Module il1-3 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-l1i-l1d-3
+LowModules = dl1-3 
+Ports = 2
+
+#
+# Level 2 Caches
+#
+#[ Module l2-0 ]
+#Type = Cache
+#Geometry = l2
+#HighNetwork = net-0
+#LowNetwork = net-4
+#LowModules = l3-0
+#Ports = 2
+#[ Module l2-1 ]
+#Type = Cache
+#Geometry = l2
+#HighNetwork = net-1
+#LowNetwork = net-4
+#LowModules = l3-0
+#Ports = 2
+#[ Module l2-2 ]
+#Type = Cache
+#Geometry = l2
+#HighNetwork = net-2
+#LowNetwork = net-4
+#LowModules = l3-0
+#Ports = 2
+#[ Module l2-3 ]
+#Type = Cache
+#Geometry = l2
+#HighNetwork = net-3
+#LowNetwork = net-4
+#LowModules = l3-0
+#Ports = 2
+#
+# Level 3 Caches
+#
+[ Module l3-0 ]
+Type = Cache
+Geometry = l3
+HighNetwork = net-l1d-l3
+LowNetwork = mesh
+LowNetworkNode = n0
+LowModules = mod-mm-0
+Ports = 2
+#
+# DRAM System
+#
+[ DRAMSystem mms-0 ]
+SystemDescription = /nfs/alumnos/hutarsan/Multi2Sim/src/configuraciones-sample/dramsim/systemDDR4.ini
+DeviceDescription = /nfs/alumnos/hutarsan/Multi2Sim/src/configuraciones-sample/dramsim/DDR4_micron_8Gb_x8_512.ini
+MB = 4096
+
+
+
+#
+# Main memory
+#
+[ Module mod-mm-0 ]
+Type = MainMemory
+DRAMSystem = mms-0
+HighNetwork = mesh
+HighNetworkNode = n1
+Latency = 120
+BlockSize = 64
+DirectorySize = 65536
+DirectoryAssoc = 65536
+Ports = 2
+
+#
+# Nodes
+#
+[ Entry core-0 ]
+Arch = x86
+Core = 0
+Thread = 0
+InstModule = il1-0
+DataModule = dl1-0
+
+[ Entry core-1 ]
+Arch = x86
+Core = 1
+Thread = 0
+InstModule = il1-1
+DataModule = dl1-1
+
+[ Entry core-2 ]
+Arch = x86
+Core = 2
+Thread = 0
+InstModule = il1-2
+DataModule = dl1-2
+
+[ Entry core-3 ]
+Arch = x86
+Core = 3
+Thread = 0
+InstModule = il1-3
+DataModule = dl1-3
+
+# Interconnects
+
+[ Network net-l1i-l1d-0 ]
+DefaultBandWidth = 512
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+
+[ Network net-l1i-l1d-1 ]
+DefaultBandWidth = 512
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+
+[ Network net-l1i-l1d-2 ]
+DefaultBandWidth = 512 
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+
+[ Network net-l1i-l1d-3 ]
+DefaultBandWidth = 512
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+
+[ Network net-l1d-l3 ]
+DefaultBandWidth = 512
+DefaultInputBufferSize = 4096
+DefaultOutputBufferSize = 4096
+

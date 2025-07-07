@@ -2,41 +2,32 @@
 
 [ General ]
 Frequency = 2000
-Cores = 1
-Threads = 2
+Cores = 4
 
 ; M2S does not auto-scale the fastforward with the number of running contexts
 ; REMEMBER TO SCALE THE FASTFORWARDED INSTRUCTIONS WHEN YOU RUN MULTIPROGRAM WLOADS.
 ; i.e. isolated execution 300M insts - 2-program workload 600M insts
 
-FastForward = 600000000
-WarmUp = 400000000
+;FastForward = 300000000
+
 
 [ Queues ]
 IqSize = 64
-RobSize = 244
+RobSize = 144
 RfIntSize = 288
 RfFpSize = 288
-RobKind = Shared
-IqKind = Shared
-LsqKind = Shared
-RfKind = Shared
 
 [ Pipeline ]
-DecodeWidth = 1
-DispatchWidth = 1
-IssueWidth = 1
-CommitWidth = 1
-FetchKind = Shared
-DispatchKind = Shared
-IssueKind = Shared
-CommitKind = Shared
+DecodeWidth = 4
+DispatchWidth = 4
+IssueWidth = 4
+CommitWidth = 4
 
 [ BranchPredictor ]
 Kind = Combined
 
 [FunctionalUnits]
-FloatAdd.Count = 1
-FloatSimple.Count = 1
-FloatMult.Count = 1
+FloatAdd.Count = 4
+FloatSimple.Count = 4
+FloatMult.Count = 4
 

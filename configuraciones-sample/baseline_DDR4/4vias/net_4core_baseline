@@ -1,0 +1,40 @@
+[ Network.mesh ] 
+  	DefaultInputBufferSize = 4096 
+  	DefaultOutputBufferSize = 4096 
+  	DefaultBandwidth = 16
+  	;Kind = Electrical 
+  	;Switching = VCT
+
+;;;;;;;; NODES ;;;;;;;; 
+
+[ Network.mesh.Node.n0 ]
+  Type = EndNode
+
+[ Network.mesh.Node.n1 ]
+  Type = EndNode
+
+;;;;;;;; SWITCHES ;;;;;;;; 
+
+[ Network.mesh.Node.s0 ]
+  Type = Switch
+
+
+;;;;;;;; LINKS ;;;;;;;; 
+
+
+[ Network.mesh.Link.n0s0 ]
+  Source = n0
+  Dest = s0
+  Type = Bidirectional
+
+[ Network.mesh.Link.n1s0 ]
+  Source = n1
+  Dest = s0
+  Type = Bidirectional
+
+;;;;;;;; ROUTES ;;;;;;;; 
+
+[ Network.mesh.Routes ]
+n0.to.n1 = s0
+n1.to.n0 = s0
+

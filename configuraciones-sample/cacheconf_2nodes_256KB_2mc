@@ -1,0 +1,127 @@
+[ CacheGeometry l1 ]
+Sets = 64
+Assoc = 8
+BlockSize = 64
+Latency = 1
+LowNetworks = 1
+
+
+[ CacheGeometry l2 ]
+Sets = 256
+Assoc = 16
+BlockSize = 64
+Latency = 6
+LowNetworks = 1
+
+#
+# Level 1 Caches
+#
+[ Module dl1-0 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-0
+LowModules = l2-0 
+
+[ Module il1-0 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-0
+LowModules = l2-0 
+
+[ Module dl1-1 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-1
+LowModules = l2-1 
+
+[ Module il1-1 ]
+Type = Cache
+Geometry = l1
+LowNetwork = net-1
+LowModules = l2-1 
+
+
+#
+# Level 2 Caches
+#
+[ Module l2-0 ]
+Type = Cache
+Geometry = l2
+HighNetwork = net-0
+LowNetwork = mesh
+LowNetworkNode = n0
+LowModules = mod-mm-0 mod-mm-1
+
+
+[ Module l2-1 ]
+Type = Cache
+Geometry = l2
+HighNetwork = net-1
+LowNetwork = mesh
+LowNetworkNode = n3
+LowModules = mod-mm-0 mod-mm-1 
+
+
+#
+# DRAM System
+#
+[ DRAMSystem mms-0 ]
+SystemDescription = /home/student/configuraciones-sample/dramsim/system.ini
+DeviceDescription = /home/student/configuraciones-sample/dramsim/DDR3_micron_8M_8B_x16_sg125.ini
+MB = 4096
+
+#
+# Main memory
+#
+[ Module mod-mm-0 ]
+Type = MainMemory
+DRAMSystem = mms-0
+HighNetwork = mesh
+HighNetworkNode = n1
+Latency = 1
+BlockSize = 64
+DirectorySize = 262144
+DirectoryAssoc = 262144
+AddressRange = ADDR DIV 4096 MOD 2 EQ 0
+
+[ Module mod-mm-1 ]
+Type = MainMemory
+DRAMSystem = mms-0
+HighNetwork = mesh
+HighNetworkNode = n2
+Latency = 1
+BlockSize = 64
+DirectorySize = 262144
+DirectoryAssoc = 262144
+AddressRange = ADDR DIV 4096 MOD 2 EQ 1
+
+
+#
+# Nodes
+#
+[ Entry core-0 ]
+Arch = x86
+Core = 0
+Thread = 0
+InstModule = il1-0
+DataModule = dl1-0
+
+[ Entry core-1 ]
+Arch = x86
+Core = 1
+Thread = 0
+InstModule = il1-1
+DataModule = dl1-1
+
+# Interconnects
+
+[ Network net-0 ]
+DefaultBandWidth = 64
+DefaultInputBufferSize = 512
+DefaultOutputBufferSize = 512
+
+[ Network net-1 ]
+DefaultBandWidth = 64
+DefaultInputBufferSize = 512
+DefaultOutputBufferSize = 512
+
