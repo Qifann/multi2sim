@@ -1,6 +1,7 @@
 #!/bin/bash
-#SBATCH --ntasks 29
+#SBATCH --ntasks 5
 #SBATCH --cpus-per-task=1
+#SBATCH -o slurm_output/slurm-%j.out
 
 TIMESTAMP=$(date '+%Y-%m-%d_%H:%M:%S')
 
