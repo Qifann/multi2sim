@@ -9,8 +9,8 @@ Threads = 1
 ; REMEMBER TO SCALE THE FASTFORWARDED INSTRUCTIONS WHEN YOU RUN MULTIPROGRAM WLOADS.
 ; i.e. isolated execution 300M insts - 2-program workload 600M insts
 
-FastForward = 300000000
-WarmUp = 200000000
+;FastForward = 300000000
+;WarmUp = 200000000
 
 [ Queues ]
 IqSize = 64
