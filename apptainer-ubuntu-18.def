@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ubuntu:18.04
 
 %files
-./multi2sim-4.1/bin/m2s /usr/local/bin/m2s
+./spec2006 /spec2006
 
 %post
     apt update && apt install -y \
@@ -14,7 +14,5 @@ From: ubuntu:18.04
         # etc.
     apt clean
     rm -rf /var/lib/apt/lists/*
-    # Copia tu aplicación
-    #mkdir -p /app
-    # Si tienes tu ejecutable local:
-    #cp -a ./multi2sim-4.1/bin/m2s /app/
+
+    chmod -R 777 /spec2006
