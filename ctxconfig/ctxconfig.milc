@@ -1,5 +1,5 @@
 [ Context 0 ]
 exe = milc_base.i386
 stdin = su3imp.in
-cwd = ./spec2006/433.milc
+cwd = /tmp/spec2006/433.milc
 StdOut = milc.out

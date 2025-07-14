@@ -1,11 +1,11 @@
 [ Context 0 ]
 exe = lbm_base.i386
 args = 3000 reference.dat 0 0 100_100_130_ldc.of
-cwd = ./spec2006/470.lbm
+cwd = /tmp/spec2006/470.lbm
 StdOut = lbm.out
 
 [ Context 1 ]
 exe = gcc_base.i386
 args = 166.i -o 166.s
-cwd = ./spec2006/403.gcc
+cwd = /tmp/spec2006/403.gcc
 StdOut = gcc.out

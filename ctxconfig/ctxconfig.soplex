@@ -1,5 +1,5 @@
 [ Context 0 ]
 exe = soplex_base.i386
 args = -m3500 ref.mps
-cwd = ./spec2006/450.soplex
+cwd = /tmp/spec2006/450.soplex
 StdOut = soplex.out

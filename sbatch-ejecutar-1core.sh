@@ -1,2 +1,2 @@
 #!/bin/bash
-sbatch ejecutar-1core.sh
+sbatch ejecutar-1core.sh &

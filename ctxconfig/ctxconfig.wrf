@@ -1,4 +1,4 @@
 [ Context 0 ]
 exe = wrf_base.i386
-cwd = ./spec2006/481.wrf
+cwd = /tmp/spec2006/481.wrf
 StdOut = wrf.out

@@ -2,5 +2,5 @@
 exe = gobmk_base.i386
 args = --quiet --mode gtp
 stdin = trevord.tst
-cwd = ./spec2006/445.gobmk
+cwd = /tmp/spec2006/445.gobmk
 StdOut = gobmk.out

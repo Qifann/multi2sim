@@ -1,5 +1,5 @@
 [ Context 0 ]
 exe = calculix_base.i386
 args = -i hyperviscoplastic
-cwd = ./spec2006/454.calculix
+cwd = /tmp/spec2006/454.calculix
 StdOut = calculix.out

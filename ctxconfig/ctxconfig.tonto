@@ -1,4 +1,4 @@
 [ Context 0 ]
 exe = tonto_base.i386
-cwd = ./spec2006/465.tonto
+cwd = /tmp/spec2006/465.tonto
 StdOut = tonto.out
