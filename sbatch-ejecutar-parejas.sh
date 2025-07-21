@@ -1,2 +1,2 @@
 #!/bin/bash
-sbatch ejecutar-parejas.sh
+sbatch ejecutar-parejas.sh &
